@@ -60,7 +60,7 @@ Unlike some other enumerator structures in .NET, the <xref:System.ReadOnlySpan`1
         </Attribute>
       </Attributes>
       <ReturnValue>
-        <ReturnType>System.T&amp;</ReturnType>
+        <ReturnType>T@</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Gets a reference to the item at the current position of the enumerator.</summary>
