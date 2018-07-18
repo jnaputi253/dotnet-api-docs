@@ -30,7 +30,7 @@
   </Attributes>
   <Docs>
     <typeparam name="T">The type of items in the <see cref="System.ReadOnlySpan`1" />.</typeparam>
-    <summary>Provides a type- and <see cref="System.ReadOnlySpan`1" /> memory-safe read-only representation of a contiguous region of arbitrary memory.</summary>
+    <summary>Provides a type-safe and memory-safe read-only representation of a contiguous region of arbitrary memory.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[`ReadOnlySpan<T>` is a [ref struct](~/docs/csharp/reference-semantics-with-value-types.md#ref-struct-type) that is allocated on the stack rather than on the managed heap. Ref struct types have a number of restrictions to ensure that they cannot be promoted to the managed heap, including that they can't be boxed and they can't be assigned to variables of type <xref:System.Object>, `dynamic`, and to any interface type.
 
@@ -426,7 +426,7 @@ A `ReadOnlySpan<T>` instance is often used to hold the elements of an array or a
       <Docs>
         <summary>Returns a value that indicates the current read-only span is empty.</summary>
         <value>
-          <format type="text/markdown"><![CDATA[`true` when the current span is empty; otherwise `false`.]]></format>
+          <format type="text/markdown"><![CDATA[<see langword="true" /> when the current span is empty; otherwise <see langword="false" />.]]></format>
         </value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -464,7 +464,7 @@ A `ReadOnlySpan<T>` instance is often used to hold the elements of an array or a
         <value>The element from the read-only span.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.IndexOutOfRangeException">
-          <paramref name="index" /> is less then zero or greater than or equal to <see cref="P:System.SpanReadOnly`1.Length" />.</exception>
+          <paramref name="index" /> is less then zero or greater than or equal to <see cref="P:System.ReadOnlySpan`1.Length" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="Length">
@@ -712,7 +712,7 @@ A `ReadOnlySpan<T>` instance is often used to hold the elements of an array or a
         <summary>Copies the contents of this read-only span into a new array.</summary>
         <returns>An array containing the data in the current span.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[This method performs a heap allocation and therefore should be avoided if possible. It it sometimes necessary when APIs that support <xref:System.ReadOnlySpan%601> objects are not available but APIs that work with arrays are.]]></format>
+          <format type="text/markdown"><![CDATA[This method performs a heap allocation and data copy, and therefore, should be avoided if possible. It it sometimes necessary when APIs that support <xref:System.ReadOnlySpan%601> objects are not available but APIs that work with arrays are.]]></format>
         </remarks>
       </Docs>
     </Member>
@@ -764,7 +764,7 @@ A `ReadOnlySpan<T>` instance is often used to hold the elements of an array or a
       </Parameters>
       <Docs>
         <param name="destination">The target of the copy operation.</param>
-        <summary>Attempts to copy the contents of this <see cref="System.ReadOnlySpan`1" /> into a <see cref="System.Span`1" /> and returns a value to indicate whether or not operation succeeded.</summary>
+        <summary>Attempts to copy the contents of this <see cref="System.ReadOnlySpan`1" /> into a <see cref="System.Span`1" /> and returns a value to indicate whether or not the operation succeeded.</summary>
         <returns>
           <see langword="true" /> if the copy operation succeeded; otherwise, <see langword="false" />.</returns>
         <remarks>
