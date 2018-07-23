@@ -32,7 +32,7 @@ Initially, the enumerator is positioned before the first element in the <xref:Sy
 
 If <xref:System.ReadOnlySpan`1.Enumerator.MoveNext%2A> passes the end of the <xref:System.ReadOnlySpan`1>, <xref:System.ReadOnlySpan`1.Enumerator.MoveNext%2A> returns `false`. When the enumerator is at this state, subsequent calls to <xref:System.ReadOnlySpan`1.Enumerator.MoveNext%2A> also return `false` and <xref:System.ReadOnlySpan`1.Enumerator.Current> is undefined. You cannot set <xref:System.ReadOnlySpan`1.Enumerator.Current> to the first item in the <xref:System.ReadOnlySpan`1> again; you must create a new enumerator instance instead. 
 
-The enumerator does not have exclusive access to the <xref:System.ReadOnlySpan`1>. In addition, the underlying data on which the span is based can also be modified. Therefore, enumerating through a span is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you must implement your own synchronization.
+Though the <xref:System.ReadOnlySpan`1> is allocated on the stack, the underlying data on which the <xref:System.ReadOnlySpan`1> points to, may not be. Therefore, enumerating through a <xref:System.ReadOnlySpan`1> is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you must implement your own synchronization.
 
 Unlike some other enumerator structures in .NET, the <xref:System.ReadOnlySpan`1.Enumerator>:
 
